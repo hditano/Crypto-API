@@ -4,43 +4,22 @@
 
 body {
     background-color: rgb(231, 224, 224);
-    width: 980px;
 }
 
 h1 {
     text-align: center;
 }
 
-header > div{
-    text-align: center;
+.table-headers {
+    border: 1px solid black;
 }
 
-.headers {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    padding-left: 1em;
-}
 
-.temp {
-    display: flex;
-    flex-direction: row;
-}
 
-.coin-name-row, .coin-price-row, .coin-price-change, .coin-price-change-percentage {
-    margin-left: 3.2em;
-    justify-content: space-around;
-    width: 20%;
-}
+/* img style */
 
-.coin-price-row {
-    margin-left: 0.5em;
-}
-
-.coin-price-change {
-    margin-left: 1.8em;
-}
-
-.coin-price-change-percentage {
-    margin-left: 3.7em;
+.logo-img {
+    margin-top: .3em;
+    width: 25px;
+    object-fit: contain;
 }

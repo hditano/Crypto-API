@@ -1,6 +1,8 @@
 const myArray = [];
-const coinLogo = document.querySelector('.coin-logo');
+const divLogo = document.querySelector('.coin-logo');
 const getButton = document.querySelector('.getPVU');
+const firstRow = document.querySelector('.first-row');
+
 
 fetch('https://api.coingecko.com/api/v3/coins/list', {
         'method': 'GET'
@@ -37,12 +39,16 @@ function getPvuPrice() {
         fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${vs_currency}&ids=${id}&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h`, options)
         .then(res => res.json())
         .then(data => {
-            renderData(data[0].name);
+            renderData(data[0].image,data[0].name, data[0].current_price, data[0].price_change_24h, data[0].price_change_percentage_24h);
         })
     }
     
 
-function renderData(name) {
-    coinName.textContent = name;
+function renderData(logo, name, price, price_change, price_change_24) {
+    firstRow.innerHTML += ` <img src="${logo}" class="logo-img">
+                            <td>${name}</td>
+                            <td>${price}</td>
+                            <td>${price_change}</td>
+                            <td>${price_change_24}</td>`
 }
 
