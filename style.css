@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(231, 224, 224);
+    width: 980px;
+}
+
+h1 {
+    text-align: center;
+}
+
+header > div{
+    text-align: center;
+}
+
+.headers {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 1em;
+}
+
+.temp {
+    display: flex;
+    flex-direction: row;
+}
+
+.coin-name-row, .coin-price-row, .coin-price-change, .coin-price-change-percentage {
+    margin-left: 6em;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.coin-price-row {
+    margin-left: 7em;
+}
+
+.coin-price-change {
+    margin-left: 9em;
+}
+
+.coin-price-change-percentage {
+    margin-left: 7em;
+}
