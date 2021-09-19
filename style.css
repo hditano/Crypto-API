@@ -28,19 +28,19 @@ header > div{
 }
 
 .coin-name-row, .coin-price-row, .coin-price-change, .coin-price-change-percentage {
-    margin-left: 6em;
+    margin-left: 5em;
     justify-content: space-around;
     width: 20%;
 }
 
 .coin-price-row {
-    margin-left: 7em;
+    margin-left: 0.5em;
 }
 
 .coin-price-change {
-    margin-left: 9em;
+    margin-left: 1.8em;
 }
 
 .coin-price-change-percentage {
-    margin-left: 7em;
+    margin-left: 3.7em;
 }

@@ -1,7 +1,7 @@
 const myArray = [];
 const coinLogo = document.querySelector('.coin-logo');
 const getButton = document.querySelector('.getPVU');
-const coinName = document.querySelector('.coin-name');
+const coinName = document.querySelector('.')
 
 fetch('https://api.coingecko.com/api/v3/coins/list', {
         'method': 'GET'
