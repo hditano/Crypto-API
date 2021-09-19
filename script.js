@@ -45,10 +45,18 @@ function getPvuPrice() {
     
 
 function renderData(logo, name, price, price_change, price_change_24) {
-    firstRow.innerHTML += ` <img src="${logo}" class="logo-img">
-                            <td>${name}</td>
-                            <td>${price}</td>
-                            <td>${price_change}</td>
-                            <td>${price_change_24}</td>`
+    let price_change_green = ``;
+    if(price_change >= 0) {
+        price_change_green = `<td class="price-change price-change-green">${price_change.toFixed(2)} %</td>` 
+    } else {
+        price_change_green = `<td class="price-change price-change-red">${price_change.toFixed(2)} %</td>`
+    }
+    firstRow.innerHTML = ` <img src="${logo}" class="logo-img">
+                            <td class="coin-name">${name.replace("Token","")}</td>
+                            <td>${price.toFixed(2)}</td>
+                            ${price_change_green}
+                            <td class="price-change">${price_change_24.toFixed(2)} %</td>
+                            <tr>
+                            </tr>`
 }
 

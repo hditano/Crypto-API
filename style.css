@@ -3,23 +3,69 @@
 }
 
 body {
-    background-color: rgb(231, 224, 224);
+
 }
 
 h1 {
     text-align: center;
 }
 
-.table-headers {
-    border: 1px solid black;
+.table-headers tr:nth-child(even){background-color: #f2f2f2;}
+
+.main-table tr:hover {background-color: #ddd;}
+
+.main-table {
+    margin: 0 auto;
 }
 
+.table-headers {
+    border-collapse: collapse;
+    font-family: 'Roboto';
+    font-size: 1.3em;
+}
 
+.first-row td {
+    font-size: 1.1em;
+}
+
+.main-table td, .main-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table-headers th {
+    justify-content: space-evenly;
+    text-align: left;
+    padding-right: 2em;
+}
+
+.table-headers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+.first-row {
+    text-align: left;
+}
+
+/* Arrows Price Change */
+
+.price-change-green {
+    color: rgb(65, 134, 65);
+}
+
+.price-change-red {
+    color: rgb(255, 0, 0);
+}
 
 /* img style */
 
 .logo-img {
     margin-top: .3em;
+    margin-left: 0.7em;
     width: 25px;
     object-fit: contain;
 }
