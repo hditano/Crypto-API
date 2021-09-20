@@ -69,11 +69,3 @@ h1 {
     width: 25px;
     object-fit: contain;
 }
-
-/* Button */
-button {
-    margin-top: 2em;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}

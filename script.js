@@ -1,7 +1,6 @@
 const myArray = [];
 const divLogo = document.querySelector('.coin-logo');
 const getButton = document.querySelector('.getPVU');
-const mainTable = document.querySelector('tr.main-table');
 const firstRow = document.querySelector('.main-table');
 
 fetch('https://api.coingecko.com/api/v3/coins/list', {
@@ -27,10 +26,10 @@ function checkPvu() {
     }
 }
 
-
-getButton.addEventListener('click', getPvuPrice);
+getPvuPrice();
 
 function getPvuPrice() {
+
     const options = {
         'method': 'GET',
         headers: {
@@ -38,7 +37,7 @@ function getPvuPrice() {
         }
     }
 
-    const coinsID = ['bitcoin', 'zcoin', 'cardano', 'tether', 'solana'];
+    const coinsID = ['bitcoin', 'zcoin', 'cardano', 'dogecoin', 'litecoin','stellar', 'solana', 'plant-vs-undead-token', 'smooth-love-potion', 'binancecoin'];
 
     let requests = coinsID.map(id => fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${id}&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h`))
 
@@ -60,10 +59,9 @@ function getPvuPrice() {
 
 function renderData(logo, name, price, price_change, price_change_24) {
 
-
-
     let price_change_green = ``;
     let price_change_green_24h = ``;
+
     if (price_change >= 0) {
         price_change_green = `<td class="price-change price-change-green">${price_change.toFixed(2)} USD</td>`
         price_change_green_24h = `<td class="price-change price-change-green">${price_change_24.toFixed(2)} %</td>`
@@ -72,15 +70,14 @@ function renderData(logo, name, price, price_change, price_change_24) {
         price_change_green_24h = `<td class="price-change price-change-red">${price_change_24.toFixed(2)} %</td>`
     }
 
-    if(mainTable) {
-        firstRow.innerHTML = ``;
-    }
+
     firstRow.innerHTML += ` 
-                            <tr class="first-row">
                             <td><img src="${logo}" class="logo-img"></td>
                             <td class="coin-name">${name.replace("Token","")}</td>
                             <td>${price.toFixed(2)}</td>
                             ${price_change_green}
                             ${price_change_green_24h}
-                            <tr>`
+                            `
+
+
 }
